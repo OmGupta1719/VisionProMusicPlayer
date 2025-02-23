@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+body{
+    height: 100vh;
+    background: url("/images/background-image.png") no-repeat center center/cover ;
+    /* background-image: linear-gradient(135deg,rgb(89, 89, 89),black); */
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.float{
+    border-top: 2px solid rgb(206, 206, 206); ;
+    background-color: rgb(101, 105, 108,0.25);
+    height: 3em;
+    width: 30%;
+    margin-top: 3em;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.float-button{
+    line-height: 2.4em;
+    text-align: center;
+    /* background-color: blue; */
+    height: 80%;
+    width: 9em;
+    border-radius: 25px;
+    
+}
+.float-button > p{
+    color: rgb(206, 206, 206);
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+}
+.music-box{
+    margin-top: 15px;
+    background-color: rgb(225, 225, 225,0.25);
+    /* background-color: yellow; */
+    height: 60vh;
+    width: 70%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+#music-box-search{
+    margin-top: 20px;
+    margin-left: 16px;
+    width: 25%;
+    height: 2.5em;
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+.music-images{
+    position: relative;
+    right: 10%;
+    
+    /* background-color: white; */
+    width: 120%;
+    height: 45%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.music-images img{
+    height: 90%;
+    gap: 30px;
+}
+.start-image{
+    mask-image: linear-gradient(to right, rgba(0,0,0,0) 20%,rgba(0,0,0,0.65) 100%);
+}
+.end-image{
+    mask-image: linear-gradient(to left, rgba(0,0,0,0) 20%,rgba(0,0,0,0.65) 100%);
+}

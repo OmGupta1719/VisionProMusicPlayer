@@ -9,3 +9,6 @@ app.use(express.urlencoded({extended:true}));
 app.listen(port,()=>{
     console.log(`App running on port ${port}`);
 })
+app.get("/",(req,res)=>{
+    res.render("home.ejs");
+})
