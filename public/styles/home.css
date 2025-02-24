@@ -59,8 +59,8 @@ body{
     opacity: 0.5;
     margin-top: 20px;
     margin-left: 20px;
-    width: 25%;
-    height: 1.8em;
+    width: 27%;
+    height: 1.5em;
     padding: 10px;
     padding-left: 15px;
     border-radius: 25px;
@@ -98,14 +98,14 @@ body{
     margin-top: 10px;
     /* position: relative;
     bottom: 300px;*/
-    height: 11em;
+    height: 10.5em;
     width: 100%;
     backdrop-filter: blur(20px);
     background-color: rgb(225, 225, 225,0.4);
 }
 .upnext{
     display: flex;
-    margin-top: 1em;
+    margin-top: 1.5em;
     margin-left: 5em;
     width: 100%;
 }
@@ -169,3 +169,10 @@ body{
     bottom: 8px;
 }
 
+.play-functions{
+    backdrop-filter: blur(10px);
+    background-color: rgb(225, 225, 225,0.2);
+    height: 7em;
+    width: 60%;
+    margin-top: 20px;
+}
