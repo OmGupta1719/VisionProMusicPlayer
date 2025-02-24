@@ -14,6 +14,8 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://kit.fontawesome.com/2a0838d839.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
     <div class="main">
@@ -50,9 +52,8 @@
                             <p class="artist-name">Hozier</p>
                         </div>
                         <div class="song-functions">
-                            <p class="duration">3:05</p>
+                            <p class="duration" >2:45</p>
                             <p class="like"><i class="fa fa-heart"></i></p>
-                            <p class="options">&#8230</p>
                         </div>
                     </div>
                     <!-- <div class="next-song">
@@ -69,11 +70,13 @@
                     </div> -->
                 </div>
             </div>
+            
 
             <div class="play-functions">
                 <div class="play-buttons">
                     <i class="fa-solid fa-backward control"></i>
-                    <i class="fa-solid fa-play control"></i>
+                    <audio id="musicPlayer" src="audio/Do-I-Wanna-Know.mp3"></audio>
+                    <img src="images/play-button.jpg" class="control" id="playButton" alt="">
                     <i class="fa-solid fa-forward control"></i>
                 </div>
                 <div class="play-bar">
@@ -83,7 +86,7 @@
                         <p class="current-artist">Arctic Monkeys</p>
                     </div>
                     <div class="current-options">
-                        <p>1:05</p>
+                        <p id="currentTime">0:00</p>
                         <i class="fa-solid fa-ellipsis option"></i>
                     </div>
                 </div>
@@ -91,10 +94,14 @@
                 <div class="volume-functions">
                     <i class="fa-solid fa-list-ul play-option"></i>
                     <i class="fa-solid fa-volume-low volume"></i>
+                    <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="changeVolume(this.value)">
                 </div>
             </div>
 
         </div>
     </div>
+
+
+    <script src="script/home.js"></script>
 </body>
 </html>

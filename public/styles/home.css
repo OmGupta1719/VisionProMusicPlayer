@@ -179,11 +179,7 @@ body{
     bottom: 12px;
     font-size: 20px;
 }
-.options{
-    font-size: 25px;
-    position: relative;
-    bottom: 8px;
-}
+
 
 .play-functions{
     backdrop-filter: blur(10px);
@@ -211,6 +207,10 @@ body{
     padding: 8px;
     font-size: 1.4em;
     margin: 0 15px;
+}
+#playButton{
+    
+    width: 50px;
 }
 .play-bar{
     backdrop-filter: blur(20px);
@@ -267,8 +267,38 @@ body{
     justify-content: center;
     gap: 30px;
 }
-.play-option{
-}
-.volume{
+/* #volumeSlider::-webkit-slider-runnable-track {
+    background: #535353; 
+    height: 6px;
+    border-radius: 5px;
+  } */
+  #volumeSlider {
+    -webkit-appearance: none;
+    width: 80px;
+    height: 5px;
+    background: white; /* Dark track */
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    right: 20px;
+  }
 
-}
+  /* Track */
+  #volumeSlider::-webkit-slider-runnable-track {
+    background: white;
+    height: 6px;
+    border-radius: 5px;
+  }
+
+  /* Thumb (draggable part) */
+  #volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: white; /* Spotify Green */
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -4px; /* Align properly */
+    transition: transform 0.2s, background 0.3s;
+  }
