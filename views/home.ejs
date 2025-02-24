@@ -27,7 +27,11 @@
             </div>
 
             <div class="music-box">
-                <input type="text" id="music-box-search" placeholder="Search by title,artist or album">
+                <form id="myForm" method="POST" action="/submit">
+                    <input name="songname" type="text" id="music-box-search" placeholder="Search by title,artist or album" required>
+                    <button class="search" type="submit">Submit</button>
+                  </form>
+                
                 <div class="music-images">
                     <img class="start-image" src="images/harrystyles-album-cover.jpg" alt="">
                     <img src="images/brunomars-album-cover.jpg" alt="">
