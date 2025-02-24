@@ -43,8 +43,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("musicPlayer").volume = value;
 }
 document.addEventListener("DOMContentLoaded", function () {
-    const music = document.getElementById("musicPlayer");
-    const volumeSlider = document.getElementById("volumeSlider");
     volumeSlider.value = 0.5; // Set slider to middle
     music.volume = 0.5; // Set actual audio volume to 50%
   });
@@ -53,10 +51,14 @@ function toggleVolume() {
     if (music.volume > 0) {
         music.volume = 0; // Mute
         volumeSlider.value = 0; // Set slider to middle
+        this.classList.remove("fa-volume-low");
+        this.classList.add("fa-volume-xmark")
         
     } else {
         music.volume = 1; // Full volume
         volumeSlider.value = 1; // Set slider to middle
+        this.classList.remove("fa-volume-xmark");
+        this.classList.add("fa-volume-low")
     }
     volumeDisplay.textContent = music.volume.toFixed(1);
 }
