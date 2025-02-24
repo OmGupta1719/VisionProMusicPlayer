@@ -1,11 +1,13 @@
 *{
     padding: 0;
     margin: 0;
-    
+    font-family: "Roboto", serif;
+    font-weight: 100;
+
 }
 body{
     height: 100vh;
-    background: url("/images/background-image.png") no-repeat center center/cover ;
+    background: url("/images/background-try.jpg") no-repeat center center/cover ;
     /* background-image: linear-gradient(135deg,rgb(89, 89, 89),black); */
 }
 .container{
@@ -20,7 +22,7 @@ body{
     backdrop-filter: blur(15px);
     height: 2.8em;
     width: 30%;
-    margin-top: 1em;
+    margin-top: 2em;
     border-radius: 25px;
     display: flex;
     justify-content: space-around;
@@ -35,13 +37,13 @@ body{
     border-radius: 25px;
     
 }
+.browse{
+    background-blend-mode: luminosity;
+}
 .float-button > p{
     color: rgb(206, 206, 206);
-    letter-spacing: 1px;
     font-size: 20px;
-    font-family: "Bentham", serif;
-    font-weight: 400;
-    font-style: normal;
+    font-weight: 300;
 }
 .music-box{
     padding-bottom: 10px;
@@ -149,6 +151,7 @@ body{
     font-size: 20px;
 }
 .artist-name{
+    color: rgba(46, 46, 46,0.95);
     font-size: 15px;
 }
 .song-functions{
@@ -162,12 +165,18 @@ body{
     gap: 30px;
 }
 .song-functions p{
-    color: white;
+    /* color: white; */
 }
 .duration{
-    font-size: 18px;
+    color: white;
+    position: relative;
+    bottom: 10px;
+    font-size: 15px;
 }
 .like{
+    color: red;
+    position: relative;
+    bottom: 12px;
     font-size: 20px;
 }
 .options{
@@ -206,9 +215,9 @@ body{
 .play-bar{
     backdrop-filter: blur(20px);
     border: 15px solid rgb(225, 225, 225,0.4);
-    border-top: 18px solid rgb(225, 225, 225,0.4);
-    border-bottom: 18px solid rgb(225, 225, 225,0.4);
-    height: 51%;
+    border-top: 10px solid rgb(225, 225, 225,0.4);
+    border-bottom: 10px solid rgb(225, 225, 225,0.4);
+    height: 71%;
     padding: 2px;
     display: flex;
     align-items: center;
@@ -229,11 +238,12 @@ body{
     margin-bottom: 2px;
 }
 .current-artist{
+    width: 18em;
     color: rgba(46, 46, 46,0.8);
     font-size: 13px;
 }
 .current-options{
-    margin-left: 9em;
+    margin-left: 1em;
     color: white;
     display: flex;
     align-items: center;
@@ -242,4 +252,23 @@ body{
 .option{
     /* margin-left: 10px; */
     padding: 5px;
+}
+.volume-functions{
+    font-size: 1.4em;
+    color: white;
+    backdrop-filter: blur(20px);
+    background-color: rgb(225, 225, 225,0.4);
+    height: 100%;
+    width: 30%;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.play-option{
+}
+.volume{
+
 }
