@@ -44,12 +44,17 @@ body{
     font-style: normal;
 }
 .music-box{
+    padding-bottom: 10px;
     margin-top: 15px;
-    backdrop-filter: blur(10px);
-    background-color: rgb(225, 225, 225,0.2);
+    /* backdrop-filter: blur(10px);
+    background-color: rgb(225, 225, 225,0.2); */
+    backdrop-filter: blur(20px);
+    background-color: rgb(225, 225, 225,0.4);
     /* background-color: yellow; */
     width: 60%;
-    border-radius: 50px;
+    /* border-radius: 50px; */
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
     display: flex;
     flex-direction: column;
     /* padding-bottom: 204px; */
@@ -95,13 +100,15 @@ body{
 .music-functions{
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
-    margin-top: 10px;
+    
     /* position: relative;
     bottom: 300px;*/
-    height: 10.5em;
-    width: 100%;
-    backdrop-filter: blur(20px);
-    background-color: rgb(225, 225, 225,0.4);
+    height: 9em;
+    width: 60%;
+    /* backdrop-filter: blur(20px);
+    background-color: rgb(225, 225, 225,0.4); */
+    backdrop-filter: blur(10px);
+    background-color: rgb(225, 225, 225,0.2);
 }
 .upnext{
     display: flex;
@@ -172,7 +179,67 @@ body{
 .play-functions{
     backdrop-filter: blur(10px);
     background-color: rgb(225, 225, 225,0.2);
-    height: 7em;
+    height: 5em;
     width: 60%;
     margin-top: 20px;
+    border-radius: 50px;
+    position: static;
+    display: flex;
+    align-items: center;
+}
+.play-buttons{
+    border-radius: 50px 0 0 50px ;
+    backdrop-filter: blur(20px);
+    background-color: rgb(225, 225, 225,0.4);
+    padding-left: 40px;
+    padding-right: 20px;
+    height: 100%;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.control{
+    padding: 8px;
+    font-size: 1.4em;
+    margin: 0 15px;
+}
+.play-bar{
+    backdrop-filter: blur(20px);
+    border: 15px solid rgb(225, 225, 225,0.4);
+    border-top: 18px solid rgb(225, 225, 225,0.4);
+    border-bottom: 18px solid rgb(225, 225, 225,0.4);
+    height: 51%;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+}
+.play-bar img{
+    margin-left: 5px;
+    border-radius: 10px;
+    height: 80%;
+}
+.current{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.current-song{
+    font-size: 17px;
+    color: white;
+    margin-bottom: 2px;
+}
+.current-artist{
+    color: rgba(46, 46, 46,0.8);
+    font-size: 13px;
+}
+.current-options{
+    margin-left: 9em;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.option{
+    /* margin-left: 10px; */
+    padding: 5px;
 }
