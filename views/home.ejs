@@ -34,48 +34,98 @@
                 
                 <div class="music-images">
                     <% if(locals.songSeven){ %>
-                        <img class="start-image" src="<%= songSeven.album.images[0].url %>" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name"><%= songSeven.name %></p>
+                            <p class="song-hover-artist-name"><%= songSeven.artists[0].name %></p>
+                            <img class="start-image" src="<%= songSeven.album.images[0].url %>" alt="">
+                        </div>
+                        
                     <% }else{ %>
-                        <img class="start-image" src="images/harrystyles-album-cover.jpg" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name">Song Name</p>
+                            <p class="song-hover-artist-name">Artist</p>
+                            <img class="start-image" src="images/harrystyles-album-cover.jpg" alt="">
+                        </div>
                     <% } %>
 
                     <% if(locals.songFive){ %>
-                        <img src="<%= songFive.album.images[0].url %>" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name"><%= songFive.name %></p>
+                            <p class="song-hover-artist-name"><%= songFive.artists[0].name %></p>
+                            <img src="<%= songFive.album.images[0].url %>" alt="">
+                        </div>
                     <% }else{ %>
-                        <img src="images/brunomars-album-cover.jpg" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name">Song Name</p>
+                            <p class="song-hover-artist-name">Artist</p>
+                            <img src="images/brunomars-album-cover.jpg" alt="">
+                        </div>
+                        
                     <% } %>
 
                     <% if(locals.songThree){ %>
-                        <img src="<%= songThree.album.images[0].url %>" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name"><%= songThree.name %></p>
+                            <p class="song-hover-artist-name"><%= songThree.artists[0].name %></p>
+                            <img src="<%= songThree.album.images[0].url %>" alt="">
+                        </div>
                     <% }else{ %>
-                        <img src="images/drake-album-cover.jpg" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name">Song Name</p>
+                            <p class="song-hover-artist-name">Artist</p>
+                            <img src="images/drake-album-cover.jpg" alt="">
+                        </div>
                     <% } %>
 
                     <% if(locals.songOne){ %>
-                        <img class="now-playing" src="<%= songOne.album.images[0].url %>" alt="">
+                            <img class="now-playing" src="<%= songOne.album.images[0].url %>" alt="">
                     <% }else{ %>
-                        <img class="now-playing" src="images/arctic-monkeys-album-cover.jpg" alt="">
+                            <img class="now-playing" src="images/arctic-monkeys-album-cover.jpg" alt="">
                     <% } %>
 
                     <% if(locals.songTwo){ %>
-                        <img  src="<%= songTwo.album.images[0].url %>" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name"><%= songTwo.name %></p>
+                            <p class="song-hover-artist-name"><%= songTwo.artists[0].name %></p>
+                            <img  src="<%= songTwo.album.images[0].url %>" alt="">
+                        </div>
                     <% }else{ %>
-                        <img src="images/hozier-album-cover.jpg" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name">Song Name</p>
+                            <p class="song-hover-artist-name">Artist</p>
+                            <img src="images/hozier-album-cover.jpg" alt="">
+                        </div>
+                        
                     <% } %>
 
                     <% if(locals.songFour){ %>
-                        <img  src="<%= songFour.album.images[0].url %>" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name"><%= songFour.name %></p>
+                            <p class="song-hover-artist-name"><%= songFour.artists[0].name %></p>
+                            <img  src="<%= songFour.album.images[0].url %>" alt="">
+                        </div>
                     <% }else{ %>
-                        <img src="images/dojacat-album-cover.jpg" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name">Song Name</p>
+                            <p class="song-hover-artist-name">Artist</p>
+                            <img src="images/dojacat-album-cover.jpg" alt="">
+                        </div>
+                        
                     <% } %>
 
                     <% if(locals.songSix){ %>
-                        <img class="end-image" src="<%= songSix.album.images[0].url %>" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name"><%= songSix.name %></p>
+                            <p class="song-hover-artist-name"><%= songSix.artists[0].name %></p>
+                            <img class="end-image" src="<%= songSix.album.images[0].url %>" alt="">
+                        </div>
                     <% }else{ %>
-                        <img class="end-image" src="images/eminem-album-cover.jpg" alt="">
+                        <div class="song-hover">
+                            <p class="song-hover-song-name">Song Name</p>
+                            <p class="song-hover-artist-name">Artist</p>
+                            <img class="end-image" src="images/eminem-album-cover.jpg" alt="">
+                        </div>
                     <% } %>
-
-
                 </div>
                 
             </div>
@@ -86,11 +136,26 @@
                 </div>
                 <div class="next-songs">
                     <div class="next-song">
-                        <img src="images/hozier-album-cover.jpg" alt="">
+                        <% if(locals.songTwo){ %>
+                            <img src="<%= songTwo.album.images[0].url%>" alt="">
+                        <% }else{ %>
+                            <img src="images/hozier-album-cover.jpg" alt="">
+                        <% } %>
+                    
                         <div class="artist">
-                            <p class="song-name">Like real people do</p>
-                            <p class="artist-name">Hozier</p>
+                            <% if(locals.songTwo){ %>
+                                <p class="song-name"><%= songTwo.name %></p>
+                            <% }else{ %>
+                                <p class="song-name">Like real people do</p>
+                            <% } %>
+
+                            <% if(locals.songTwo){ %>
+                                <p class="artist-name"><%= songTwo.artists[0].name%></p>
+                            <% }else{ %>
+                                <p class="artist-name">Hozier</p>
+                            <% } %>
                         </div>
+
                         <div class="song-functions">
                             <p class="duration" >2:45</p>
                             <p class="like"><i class="fa fa-heart"></i></p>
@@ -115,8 +180,8 @@
             <div class="play-functions">
                 <div class="play-buttons">
                     <i class="fa-solid fa-backward control"></i>
-                    <% if(locals.song){%>
-                        <audio id="musicPlayer" src="<%= song %>"></audio>
+                    <% if(locals.songOne){%>
+                        <audio id="musicPlayer" src="<%= songOne.preview_url %>"></audio>
                     <%}else{%>
                         <audio id="musicPlayer" src="audio/Do-I-Wanna-Know.mp3"></audio>
                     <%} %>
@@ -132,8 +197,18 @@
                     <% } %>
                     
                     <div class="current">
-                        <p class="current-song">Do i wanna know</p>
-                        <p class="current-artist">Arctic Monkeys</p>
+                        <% if(locals.songOne){ %>
+                            <p class="current-song"><%= songOne.name %></p>
+                        <% }else{%>
+                            <p class="current-song">Do i wanna know</p>
+                        <% } %>
+                        
+                        <% if(locals.songOne){ %>
+                            <p class="current-artist"><%= songOne.artists[0].name %></p>
+                        <% }else{%>
+                            <p class="current-artist">Arctic Monkeys</p>
+                        <% } %>
+                        
                     </div>
                     <div class="current-options">
                         <p id="currentTime">0:00</p>

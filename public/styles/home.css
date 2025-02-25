@@ -98,10 +98,39 @@ body{
 .music-images img{
     height: 130px;
     gap: 30px;
+    transition: height 0.1s ease-in-out;
 }
+
 .now-playing{
-    height: 200px !important;
+    height: 220px !important;
 }
+/* TRY */
+.music-images img:hover{
+    height: 140px;
+}
+
+.song-hover{
+    height: 180px;
+    align-content: end;
+  }
+.song-hover p{
+    text-wrap: wrap;
+    font-size: 13px;
+    padding-bottom: 2px;
+    text-align: center;
+    display: none;
+  }
+  .song-hover:hover p{
+    display: block;
+  }
+  .song-hover-song-name{
+    color: white;
+    font-weight: 200;
+  }
+  .song-hover-artist-name{
+    font-weight: 100;
+  }
+/* TRY */
 .start-image{
     mask-image: linear-gradient(to right, rgba(0,0,0,0) 20%,rgba(0,0,0,0.65) 100%);
 }
@@ -174,9 +203,6 @@ body{
     position: relative;
     left: 70%;
     gap: 30px;
-}
-.song-functions p{
-    /* color: white; */
 }
 .duration{
     color: white;
@@ -316,3 +342,4 @@ body{
     margin-top: -4px; /* Align properly */
     transition: transform 0.2s, background 0.3s;
   }
+
