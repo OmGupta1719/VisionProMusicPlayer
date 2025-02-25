@@ -43,8 +43,8 @@
                         </div>
                     <% }else{ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name">Song Name</p>
-                            <p class="song-hover-artist-name">Artist</p>
+                            <p class="song-hover-song-name">To Be So Lonely</p>
+                            <p class="song-hover-artist-name">Harry Styles</p>
                             <img class="start-image" src="images/harrystyles-album-cover.jpg" alt="">
                         </div>
                     <% } %>
@@ -57,8 +57,8 @@
                         </div>
                     <% }else{ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name">Song Name</p>
-                            <p class="song-hover-artist-name">Artist</p>
+                            <p class="song-hover-song-name">When I Was Your Man</p>
+                            <p class="song-hover-artist-name">Bruno Mars</p>
                             <img src="images/brunomars-album-cover.jpg" alt="">
                         </div>
                     <% } %>
@@ -71,8 +71,8 @@
                         </div>
                     <% }else{ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name">Song Name</p>
-                            <p class="song-hover-artist-name">Artist</p>
+                            <p class="song-hover-song-name">IDGAF</p>
+                            <p class="song-hover-artist-name">Drake</p>
                             <img src="images/drake-album-cover.jpg" alt="">
                         </div>
                     <% } %>
@@ -91,8 +91,8 @@
                         </div>
                     <% }else{ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name">Song Name</p>
-                            <p class="song-hover-artist-name">Artist</p>
+                            <p class="song-hover-song-name">Cherry Wine</p>
+                            <p class="song-hover-artist-name">Hozier</p>
                             <img src="images/hozier-album-cover.jpg" alt="">
                         </div>
                     <% } %>
@@ -105,9 +105,9 @@
                         </div>
                     <% }else{ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name">Song Name</p>
-                            <p class="song-hover-artist-name">Artist</p>
-                            <img src="images/dojacat-album-cover.jpg" alt="">
+                            <p class="song-hover-song-name">Agora Hills</p>
+                            <p class="song-hover-artist-name">Doja Cat</p>
+                            <img src="images/dojacat-album-cover.png" alt="">
                         </div>
                         
                     <% } %>
@@ -120,8 +120,8 @@
                         </div>
                     <% }else{ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name">Song Name</p>
-                            <p class="song-hover-artist-name">Artist</p>
+                            <p class="song-hover-song-name">The Real Slim Shady</p>
+                            <p class="song-hover-artist-name">Eminem</p>
                             <img class="end-image" src="images/eminem-album-cover.jpg" alt="">
                         </div>
                     <% } %>
@@ -157,22 +157,16 @@
                         </div>
 
                         <div class="song-functions">
-                            <p class="duration" >2:45</p>
+                            <% let minutes = Math.floor(duration_ms / 60000); %>
+                            <% let seconds = ((duration_ms % 60000) / 1000).toFixed(0); %>
+                            <% if(locals.songTwo){ %>
+                                <p class="duration"> <%= minutes%> <%= seconds.padStart(2, '0') %></p>
+                            <% }else{ %>
+                                <p class="duration" >2:45</p>
+                            <% } %>
                             <p class="like"><i class="fa fa-heart"></i></p>
                         </div>
                     </div>
-                    <!-- <div class="next-song">
-                        <img src="images/dojacat-album-cover.jpg" alt="">
-                        <div class="artist">
-                            <p class="song-name">Agora Hills</p>
-                            <p class="artist-name">Doja Cat</p>
-                        </div>
-                        <div class="song-functions">
-                            <p class="duration">3:05</p>
-                            <p class="like"><i class="fa fa-heart"></i></p>
-                            <p class="options">&#8230</p>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             
@@ -215,7 +209,8 @@
                     </div>
                     <div class="current-options">
                         <p id="currentTime">0:00</p>
-                        <i class="fa-solid fa-ellipsis option"></i>
+                        <!-- <p class="like"><i class="fa fa-heart"></i></p> -->
+                        <i class="fa fa-heart current-like"></i>
                     </div>
                 </div>
 

@@ -32,13 +32,22 @@ body{
     line-height: 2.4em;
     text-align: center;
     /* background-color: blue; */
-    height: 80%;
-    width: 9em;
+    height: 100%;
+    width: 100%;
     border-radius: 25px;
     
 }
+.home{
+    background-color: none;
+    cursor: context-menu;
+}
 .browse{
-    background-blend-mode: luminosity;
+    background-color: rgba(226, 219, 219, 0.3);
+    cursor: context-menu;
+}
+.playlist{
+    background-color: none;
+    cursor: context-menu;
 }
 .float-button > p{
     color: rgb(206, 206, 206);
@@ -75,14 +84,6 @@ body{
     outline: none;
 }
 .search{
-        /* background-color: rgb(225, 225, 225,0.4);
-        border: none;
-        color: white;
-        padding: 6px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        border-radius: 8px;
-        cursor: pointer; */
         background-color: white;
         opacity: 0.5;
         margin-top: 20px;
@@ -322,8 +323,8 @@ body{
     align-items: center;
     gap: 20px;
 }
-.option{
-    /* margin-left: 10px; */
+.current-like{
+    margin-right: 10px;
     padding: 5px;
 }
 .volume-functions{

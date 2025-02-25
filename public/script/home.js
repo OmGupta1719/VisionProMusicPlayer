@@ -1,5 +1,36 @@
+const home = document.getElementsByClassName("home")[0];
+const browse = document.getElementsByClassName("browse")[0];
+const playlist = document.getElementsByClassName("playlist")[0];
+
+home.addEventListener("click",function(){
+    home.style.backgroundColor = "rgba(226, 219, 219, 0.3)";
+    browse.style.backgroundColor = "transparent";
+    playlist.style.backgroundColor = "transparent";
+})
+browse.addEventListener("click",function(){
+    home.style.backgroundColor = "transparent"
+    browse.style.backgroundColor = "rgba(226, 219, 219, 0.3)"
+    playlist.style.backgroundColor = "transparent"
+})
+playlist.addEventListener("click",function(){
+    home.style.backgroundColor = "transparent"
+    browse.style.backgroundColor = "transparent"
+    playlist.style.backgroundColor = "rgba(226, 219, 219, 0.3)"
+})
+
+
+
+
 //Like
 document.getElementsByClassName("like")[0].addEventListener("click",function(){
+    if(this.style.color==="red"){
+        this.style.color="white"
+    }else{
+        this.style.color="red"
+    }
+})
+//Cuurent-like
+document.getElementsByClassName("current-like")[0].addEventListener("click",function(){
     if(this.style.color==="red"){
         this.style.color="white"
     }else{
