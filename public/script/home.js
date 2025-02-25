@@ -152,9 +152,7 @@ document.querySelectorAll('.song-hover').forEach(song => {
         const audioPlayer = document.getElementById('musicPlayer');
 
         // Get up next elements
-        const upNextImage = document.querySelector('.next-song img');
-        const upNextSong = document.querySelector('.next-song .song-name');
-        const upNextArtist = document.querySelector('.next-song .artist-name');
+        
 
         // Store current playing song details before replacement
         const currentSongName = nowPlayingSong.textContent;
@@ -171,11 +169,6 @@ document.querySelectorAll('.song-hover').forEach(song => {
         let formattedSongName = songName.toLowerCase().replace(/ /g, '-');
         let audioSrc = `audio/${formattedSongName}.mp3`;
 
-        // Special case for "Do I Wanna Know"
-        if (songName.toLowerCase() === "do i wanna know") {
-            audioSrc = "audio/do-i-wanna-know.mp3"; // Ensure exact file path
-        }
-
         // Update audio source
         audioPlayer.src = audioSrc;
         audioPlayer.play();
@@ -185,16 +178,30 @@ document.querySelectorAll('.song-hover').forEach(song => {
             console.error('Audio file not found:', audioSrc);
         };
 
-        // Update Up Next to always be songTwo
-        if (typeof songTwo !== "undefined" && songTwo !== null) {
-            upNextImage.src = songTwo.album.images[0].url;
-            upNextSong.textContent = songTwo.name;
-            upNextArtist.textContent = songTwo.artists[0].name;
-        }
 
         // Replace the selected song with the previously playing song
         this.querySelector('.song-hover-song-name').textContent = currentSongName;
         this.querySelector('.song-hover-artist-name').textContent = currentArtistName;
         this.querySelector('img').src = currentSongImage;
+
+
+        // Update Up Next to always be songTwo
+        
+
     });
 });
+
+
+
+document.getElementById("dynamic-two").addEventListener("click",()=>{
+        const upNextImage = document.querySelector('#next-song-image');
+        const upNextSong = document.querySelector('#next-song-name');
+        const upNextArtist = document.querySelector('#next-song-artist');
+        const songTwoImage = document.getElementById("dynamic-two-image").src;
+        const songTwoName = document.getElementById("dynamic-two-name").textContent;
+        const songTwoArtist = document.getElementById("dynamic-two-artist").textContent;
+
+        upNextImage.src = songTwoImage;
+        upNextSong.textContent = songTwoName;
+        upNextArtist.textContent = songTwoArtist;
+})

@@ -84,16 +84,16 @@
                     <% } %>
 
                     <% if(locals.songTwo){ %>
-                        <div class="song-hover">
-                            <p class="song-hover-song-name"><%= songTwo.name.slice(0,23) %></p>
-                            <p class="song-hover-artist-name"><%= songTwo.artists[0].name %></p>
-                            <img  src="<%= songTwo.album.images[0].url %>" alt="">
+                        <div id="dynamic-two" class="song-hover">
+                            <p id="dynamic-two-name" class="song-hover-song-name"><%= songTwo.name.slice(0,23) %></p>
+                            <p id="dynamic-two-artist" class="song-hover-artist-name"><%= songTwo.artists[0].name %></p>
+                            <img id="dynamic-two-image"  src="<%= songTwo.album.images[0].url %>" alt="">
                         </div>
                     <% }else{ %>
-                        <div class="song-hover">
-                            <p class="song-hover-song-name">Cherry Wine</p>
-                            <p class="song-hover-artist-name">Hozier</p>
-                            <img src="images/hozier-album-cover.jpg" alt="">
+                        <div id="dynamic-two" class="song-hover">
+                            <p id="dynamic-two-name" class="song-hover-song-name">Cherry Wine</p>
+                            <p id="dynamic-two-artist" class="song-hover-artist-name">Hozier</p>
+                            <img id="dynamic-two-image" src="images/hozier-album-cover.jpg" alt="">
                         </div>
                     <% } %>
 
@@ -137,22 +137,22 @@
                 <div class="next-songs">
                     <div class="next-song">
                         <% if(locals.songTwo){ %>
-                            <img src="<%= songTwo.album.images[0].url%>" alt="">
+                            <img id="next-song-image" src="<%= songTwo.album.images[0].url%>" alt="">
                         <% }else{ %>
-                            <img src="images/hozier-album-cover.jpg" alt="">
+                            <img id="next-song-image" src="images/hozier-album-cover.jpg" alt="">
                         <% } %>
                     
                         <div class="artist">
                             <% if(locals.songTwo){ %>
-                                <p class="song-name"><%= songTwo.name %></p>
+                                <p id="next-song-name" class="song-name"><%= songTwo.name %></p>
                             <% }else{ %>
-                                <p class="song-name">Cherry Wine</p>
+                                <p id="next-song-name" class="song-name">Cherry Wine</p>
                             <% } %>
 
                             <% if(locals.songTwo){ %>
-                                <p class="artist-name"><%= songTwo.artists[0].name%></p>
+                                <p id="next-song-artist" class="artist-name"><%= songTwo.artists[0].name%></p>
                             <% }else{ %>
-                                <p class="artist-name">Hozier</p>
+                                <p id="next-song-artist" class="artist-name">Hozier</p>
                             <% } %>
                         </div>
 
