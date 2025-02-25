@@ -1,7 +1,15 @@
 import express from "express"
 import dotenv from "dotenv";
+import path from "path";
+import { fileURLToPath } from "url";
+
+
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const NO_CODE_API_SPOTIFY = process.env.NO_CODE_API_SPOTIFY; // Secure API Key
 
 const app = express();
@@ -11,6 +19,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 app.listen(port,()=>{
     console.log(`App running on port ${port}`);
