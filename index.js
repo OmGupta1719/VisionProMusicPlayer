@@ -1,4 +1,8 @@
 import express from "express"
+import dotenv from "dotenv";
+
+dotenv.config();
+const NO_CODE_API_SPOTIFY = process.env.NO_CODE_API_SPOTIFY; // Secure API Key
 
 const app = express();
 const port = 3000;
@@ -18,7 +22,7 @@ app.get("/",(req,res)=>{
 //Get searched name
 app.post("/submit",async (req,res)=>{
     console.log(req.body.songname);
-    const result = await fetch(`https://v1.nocodeapi.com/om1719/spotify/JVijqexPXnnsIxXm/search?q=${req.body.songname}&type=track`);
+    const result = await fetch(`${NO_CODE_API_SPOTIFY}/search?q=${req.body.songname}&type=track`);
     const songData = await result.json();
     console.log(songData.tracks);
     const one = songData.tracks.items[0];
