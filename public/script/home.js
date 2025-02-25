@@ -131,3 +131,70 @@ function fTime(time) {
     const seconds = Math.floor(time % 60).toString().padStart(2, "0");
     return `${minutes}:${seconds}`;
 }
+
+
+
+
+
+
+
+document.querySelectorAll('.song-hover').forEach(song => {
+    song.addEventListener('click', function () {
+        const songName = this.querySelector('.song-hover-song-name').textContent.trim();
+        const artistName = this.querySelector('.song-hover-artist-name').textContent.trim();
+        const songImage = this.querySelector('img').src;
+
+        // Get current now-playing elements
+        const nowPlayingImage = document.querySelector('.now-playing');
+        const nowPlayingSong = document.querySelector('.current-song');
+        const nowPlayingArtist = document.querySelector('.current-artist');
+        const playBarImage = document.getElementById('play-bar-image');
+        const audioPlayer = document.getElementById('musicPlayer');
+
+        // Get up next elements
+        const upNextImage = document.querySelector('.next-song img');
+        const upNextSong = document.querySelector('.next-song .song-name');
+        const upNextArtist = document.querySelector('.next-song .artist-name');
+
+        // Store current playing song details before replacement
+        const currentSongName = nowPlayingSong.textContent;
+        const currentArtistName = nowPlayingArtist.textContent;
+        const currentSongImage = nowPlayingImage.src;
+
+        // Update now-playing section
+        nowPlayingImage.src = songImage;
+        nowPlayingSong.textContent = songName;
+        nowPlayingArtist.textContent = artistName;
+        playBarImage.src = songImage; // Update play-bar image
+
+        // Format audio filename
+        let formattedSongName = songName.toLowerCase().replace(/ /g, '-');
+        let audioSrc = `audio/${formattedSongName}.mp3`;
+
+        // Special case for "Do I Wanna Know"
+        if (songName.toLowerCase() === "do i wanna know") {
+            audioSrc = "audio/do-i-wanna-know.mp3"; // Ensure exact file path
+        }
+
+        // Update audio source
+        audioPlayer.src = audioSrc;
+        audioPlayer.play();
+
+        // Handle errors in case the audio file is missing
+        audioPlayer.onerror = function () {
+            console.error('Audio file not found:', audioSrc);
+        };
+
+        // Update Up Next to always be songTwo
+        if (typeof songTwo !== "undefined" && songTwo !== null) {
+            upNextImage.src = songTwo.album.images[0].url;
+            upNextSong.textContent = songTwo.name;
+            upNextArtist.textContent = songTwo.artists[0].name;
+        }
+
+        // Replace the selected song with the previously playing song
+        this.querySelector('.song-hover-song-name').textContent = currentSongName;
+        this.querySelector('.song-hover-artist-name').textContent = currentArtistName;
+        this.querySelector('img').src = currentSongImage;
+    });
+});

@@ -146,7 +146,7 @@
                             <% if(locals.songTwo){ %>
                                 <p class="song-name"><%= songTwo.name %></p>
                             <% }else{ %>
-                                <p class="song-name">Like real people do</p>
+                                <p class="song-name">Cherry Wine</p>
                             <% } %>
 
                             <% if(locals.songTwo){ %>
@@ -157,13 +157,7 @@
                         </div>
 
                         <div class="song-functions">
-                            <% let minutes = Math.floor(duration_ms / 60000); %>
-                            <% let seconds = ((duration_ms % 60000) / 1000).toFixed(0); %>
-                            <% if(locals.songTwo){ %>
-                                <p class="duration"> <%= minutes%> <%= seconds.padStart(2, '0') %></p>
-                            <% }else{ %>
-                                <p class="duration" >2:45</p>
-                            <% } %>
+                                <p class="duration">00:29</p>
                             <p class="like"><i class="fa fa-heart"></i></p>
                         </div>
                     </div>
@@ -184,16 +178,16 @@
                 </div>
                 <div class="play-bar">
                     <% if(locals.songOne){ %>
-                        <img src="<%= songOne.album.images[0].url %>" alt="">
+                        <img id="play-bar-image" src="<%= songOne.album.images[0].url %>" alt="">
                     <% }else{ %>
-                        <img src="images/arctic-monkeys-album-cover.jpg" alt="Image">
+                        <img id="play-bar-image" src="images/arctic-monkeys-album-cover.jpg" alt="Image">
                     <% } %>
                     
                     <div class="current">
                         <% if(locals.songOne){ %>
                             <p class="current-song"><%= songOne.name %></p>
                         <% }else{%>
-                            <p class="current-song">Do i wanna know</p>
+                            <p class="current-song">Do I Wanna Know</p>
                         <% } %>
                         
                         <% if(locals.songOne){ %>
