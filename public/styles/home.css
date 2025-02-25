@@ -189,13 +189,15 @@ body{
 }
 /*  */
 .progress-container {
-    width: 30%;
+    width: 80%;
     height: 6px;
     background: white;
     border-radius: 5px;
     overflow: hidden;
     margin: 10px 0;
     cursor: pointer;
+    position: relative;
+    bottom: 5px;
 }
 
 /* Progress Fill (Dynamically Expanding) */
@@ -300,16 +302,18 @@ body{
     display: flex;
     flex-direction: column;
     margin-left: 20px;
+    margin-top: 10px;
 }
 .current-song{
-    font-size: 17px;
+    font-size: 16px;
     color: white;
-    margin-bottom: 2px;
+    /* margin-bottom: 2px; */
 }
 .current-artist{
     width: 18em;
     color: rgba(46, 46, 46,0.8);
-    font-size: 13px;
+    font-size: 12px;
+    
 }
 .current-options{
     margin-left: 1em;

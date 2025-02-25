@@ -20,6 +20,7 @@ app.post("/submit",async (req,res)=>{
     console.log(req.body.songname);
     const result = await fetch(`https://v1.nocodeapi.com/om1719/spotify/JVijqexPXnnsIxXm/search?q=${req.body.songname}&type=track`);
     const songData = await result.json();
+    console.log(songData.tracks);
     const one = songData.tracks.items[0];
     const two = songData.tracks.items[1];
     const three = songData.tracks.items[2];
