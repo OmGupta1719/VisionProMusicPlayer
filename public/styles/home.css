@@ -75,14 +75,25 @@ body{
     outline: none;
 }
 .search{
-        background-color: rgb(225, 225, 225,0.4);
+        /* background-color: rgb(225, 225, 225,0.4);
         border: none;
         color: white;
         padding: 6px 20px;
         font-size: 16px;
         font-weight: bold;
         border-radius: 8px;
-        cursor: pointer;
+        cursor: pointer; */
+        background-color: white;
+        opacity: 0.5;
+        margin-top: 20px;
+        width: 7%;
+        height: 3em;
+        border-radius: 25px;
+        border: none;
+        outline: none;
+        position: relative;
+        right: 68px;
+        font-weight: 300;
 }
 
 .music-images{
@@ -162,6 +173,7 @@ body{
     height: 1.5em;
 }
 .upnext p{
+    margin-right: 60px;
     font-size: 1em;
     padding-left: 0.5em;
     line-height: 1.45em;
@@ -175,6 +187,26 @@ body{
 .next-song{
     height: 70px;
 }
+/*  */
+.progress-container {
+    width: 30%;
+    height: 6px;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+/* Progress Fill (Dynamically Expanding) */
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #b9271d;
+    transition: width 0.2s linear;
+}
+/*  */
+
 .next-song img{
     height: 60px;
     border-radius: 10px;

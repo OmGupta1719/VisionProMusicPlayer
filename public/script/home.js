@@ -62,3 +62,41 @@ function toggleVolume() {
     }
     volumeDisplay.textContent = music.volume.toFixed(1);
 }
+
+
+
+
+// 
+// 
+// 
+
+const progressContainer = document.getElementById("progressContainer");
+const totalTimeDisplay = document.getElementById("totalTime");
+
+
+// Update total duration
+music.addEventListener("loadedmetadata", () => {
+    totalTimeDisplay.textContent = formatTime(music.duration);
+});
+
+// Update progress bar as song plays
+music.addEventListener("timeupdate", () => {
+    const progressPercentage = (music.currentTime / music.duration) * 100;
+    progressFill.style.width = `${progressPercentage}%`;
+    currentTimeDisplay.textContent = fTime(music.currentTime);
+});
+
+// Seek functionality (Click on progress bar)
+progressContainer.addEventListener("click", (e) => {
+    const clickX = e.offsetX;
+    const totalWidth = progressContainer.clientWidth;
+    const newTime = (clickX / totalWidth) * music.duration;
+    music.currentTime = newTime;
+});
+
+// Format time function
+function fTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60).toString().padStart(2, "0");
+    return `${minutes}:${seconds}`;
+}

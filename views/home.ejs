@@ -28,18 +28,19 @@
 
             <div class="music-box">
                 <form id="myForm" method="POST" action="/submit">
-                    <input name="songname" type="text" id="music-box-search" placeholder="Search by title,artist or album" required>
-                    <button class="search" type="submit">Submit</button>
-                  </form>
+                    <div class="search-box">
+                        <input name="songname" type="text" id="music-box-search" placeholder="Search by title,artist or album" required>
+                        <button class="search" type="submit">Listen</button>
+                    </div>
+                </form>
                 
                 <div class="music-images">
                     <% if(locals.songSeven){ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name"><%= songSeven.name %></p>
+                            <p class="song-hover-song-name"><%= songSeven.name.slice(0,23) %></p>
                             <p class="song-hover-artist-name"><%= songSeven.artists[0].name %></p>
                             <img class="start-image" src="<%= songSeven.album.images[0].url %>" alt="">
                         </div>
-                        
                     <% }else{ %>
                         <div class="song-hover">
                             <p class="song-hover-song-name">Song Name</p>
@@ -50,7 +51,7 @@
 
                     <% if(locals.songFive){ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name"><%= songFive.name %></p>
+                            <p class="song-hover-song-name"><%= songFive.name.slice(0,23) %></p>
                             <p class="song-hover-artist-name"><%= songFive.artists[0].name %></p>
                             <img src="<%= songFive.album.images[0].url %>" alt="">
                         </div>
@@ -60,12 +61,11 @@
                             <p class="song-hover-artist-name">Artist</p>
                             <img src="images/brunomars-album-cover.jpg" alt="">
                         </div>
-                        
                     <% } %>
 
                     <% if(locals.songThree){ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name"><%= songThree.name %></p>
+                            <p class="song-hover-song-name"><%= songThree.name.slice(0,23) %></p>
                             <p class="song-hover-artist-name"><%= songThree.artists[0].name %></p>
                             <img src="<%= songThree.album.images[0].url %>" alt="">
                         </div>
@@ -85,7 +85,7 @@
 
                     <% if(locals.songTwo){ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name"><%= songTwo.name %></p>
+                            <p class="song-hover-song-name"><%= songTwo.name.slice(0,23) %></p>
                             <p class="song-hover-artist-name"><%= songTwo.artists[0].name %></p>
                             <img  src="<%= songTwo.album.images[0].url %>" alt="">
                         </div>
@@ -95,12 +95,11 @@
                             <p class="song-hover-artist-name">Artist</p>
                             <img src="images/hozier-album-cover.jpg" alt="">
                         </div>
-                        
                     <% } %>
 
                     <% if(locals.songFour){ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name"><%= songFour.name %></p>
+                            <p class="song-hover-song-name"><%= songFour.name.slice(0,23) %></p>
                             <p class="song-hover-artist-name"><%= songFour.artists[0].name %></p>
                             <img  src="<%= songFour.album.images[0].url %>" alt="">
                         </div>
@@ -115,7 +114,7 @@
 
                     <% if(locals.songSix){ %>
                         <div class="song-hover">
-                            <p class="song-hover-song-name"><%= songSix.name %></p>
+                            <p class="song-hover-song-name"><%= songSix.name.slice(0,23) %></p>
                             <p class="song-hover-artist-name"><%= songSix.artists[0].name %></p>
                             <img class="end-image" src="<%= songSix.album.images[0].url %>" alt="">
                         </div>
@@ -133,6 +132,11 @@
                 <div class="upnext">
                     <img src="images/play-next-white-icon.png" alt="">
                     <p>Up Next</p>
+                    <!--  -->
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <!--  -->
                 </div>
                 <div class="next-songs">
                     <div class="next-song">
@@ -185,7 +189,6 @@
                     <%}else{%>
                         <audio id="musicPlayer" src="audio/Do-I-Wanna-Know.mp3"></audio>
                     <%} %>
-                    
                     <img src="images/play-button.jpg" class="control" id="playButton" alt="">
                     <i class="fa-solid fa-forward control"></i>
                 </div>
@@ -219,7 +222,6 @@
                 <div class="volume-functions">
                     <i class="fa-solid fa-list-ul play-option"></i>
                     <i class="fa-solid fa-volume-low volume"></i>
-                    <!-- <img src="images/full-volume.png" class="volume" style="width: 40px;"> -->
                     <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="1" oninput="changeVolume(this.value)">
                 </div>
             </div>
