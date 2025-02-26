@@ -91,6 +91,17 @@ function toggleVolume() {
     // volumeDisplay.textContent = music.volume.toFixed(1);
 }
 
+volumeSlider.addEventListener("click",()=>{
+    if(volumeSlider.value>0){
+        document.getElementsByClassName("volume")[0].classList.remove("fa-volume-xmark");
+        document.getElementsByClassName("volume")[0].classList.add("fa-volume-low")
+    }
+    if(volumeSlider.value == 0){
+        document.getElementsByClassName("volume")[0].classList.remove("fa-volume-low");
+        document.getElementsByClassName("volume")[0].classList.add("fa-volume-xmark")
+    }
+})
+
 
 const progressContainer = document.getElementById("progressContainer");
 const totalTimeDisplay = document.getElementById("totalTime");
