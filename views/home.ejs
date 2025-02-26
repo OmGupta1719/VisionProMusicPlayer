@@ -68,14 +68,14 @@
                     <% } %>
 
                     <% if(locals.songThree){ %>
-                        <div class="song-hover">
+                        <div id="dynamic-three" class="song-hover">
                             <p class="song-hover-song-name"><%= songThree.name.slice(0,23) %></p>
                             <p class="song-hover-artist-name"><%= songThree.artists[0].name %></p>
                             <img src="<%= songThree.album.images[0].url %>" alt="">
                             <audio class="music" src="<%= songThree.preview_url %>"></audio>
                         </div>
                     <% }else{ %>
-                        <div class="song-hover">
+                        <div id="dynamic-three" class="song-hover">
                             <p class="song-hover-song-name">IDGAF</p>
                             <p class="song-hover-artist-name">Drake</p>
                             <img src="images/drake-album-cover.jpg" alt="">
@@ -179,14 +179,14 @@
 
             <div class="play-functions">
                 <div class="play-buttons">
-                    <i class="fa-solid fa-backward control"></i>
+                    <i class="fa-solid fa-backward control" id="previous"></i>
                     <% if(locals.songOne){%>
                         <audio id="musicPlayer" src="<%= songOne.preview_url %>"></audio>
                     <%}else{%>
                         <audio id="musicPlayer" src="audio/Do-I-Wanna-Know.mp3"></audio>
                     <%} %>
                     <img src="images/play-button.jpg" class="control" id="playButton" alt="">
-                    <i class="fa-solid fa-forward control"></i>
+                    <i class="fa-solid fa-forward control" id="next"></i>
                 </div>
                 <div class="play-bar">
                     <% if(locals.songOne){ %>

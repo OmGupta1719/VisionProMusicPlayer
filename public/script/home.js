@@ -156,15 +156,12 @@ document.querySelectorAll('.song-hover').forEach(song => {
         nowPlayingArtist.textContent = artistName;
         playBarImage.src = songImage; // Update play-bar image
         
-
-
         // Update audio source
         const clickAudio = this.querySelector('.music'); 
-const tempSrc = audioPlayer.src; 
-
-audioPlayer.src = clickAudio.src; 
-audioPlayer.load(); 
-audioPlayer.play(); 
+        const tempSrc = audioPlayer.src; 
+        audioPlayer.src = clickAudio.src; 
+        audioPlayer.load(); 
+        audioPlayer.play(); 
 
 clickAudio.src = tempSrc;
         const playButton = document.getElementById("playButton");
@@ -192,4 +189,15 @@ document.getElementById("dynamic-two").addEventListener("click",()=>{
         upNextImage.src = songTwoImage;
         upNextSong.textContent = songTwoName;
         upNextArtist.textContent = songTwoArtist;
+})
+
+
+//Next and Previous
+document.getElementById("next").addEventListener("click",()=>{
+    document.getElementById("dynamic-two").click();
+})
+
+
+document.getElementById("previous").addEventListener("click",()=>{
+    document.getElementById("dynamic-three").click();
 })
