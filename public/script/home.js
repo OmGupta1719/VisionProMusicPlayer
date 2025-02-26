@@ -92,12 +92,6 @@ function toggleVolume() {
 }
 
 
-
-
-// 
-// 
-// 
-
 const progressContainer = document.getElementById("progressContainer");
 const totalTimeDisplay = document.getElementById("totalTime");
 
@@ -147,8 +141,6 @@ document.querySelectorAll('.song-hover').forEach(song => {
         const nowPlayingArtist = document.querySelector('.current-artist');
         const playBarImage = document.getElementById('play-bar-image');
         const audioPlayer = document.getElementById('musicPlayer');
-
-        // Get up next elements
         
 
         // Store current playing song details before replacement
@@ -182,11 +174,7 @@ document.querySelectorAll('.song-hover').forEach(song => {
         this.querySelector('.song-hover-song-name').textContent = currentSongName;
         this.querySelector('.song-hover-artist-name').textContent = currentArtistName;
         this.querySelector('img').src = currentSongImage;
-
-
-        // Update Up Next to always be songTwo
         
-
     });
 });
 
