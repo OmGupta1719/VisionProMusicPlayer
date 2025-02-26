@@ -19,9 +19,6 @@ playlist.addEventListener("click",function(){
 })
 
 
-
-
-//Like
 document.getElementsByClassName("like")[0].addEventListener("click",function(){
     if(this.style.color==="red"){
         this.style.color="white"
@@ -29,7 +26,7 @@ document.getElementsByClassName("like")[0].addEventListener("click",function(){
         this.style.color="red"
     }
 })
-//Cuurent-like
+
 document.getElementsByClassName("current-like")[0].addEventListener("click",function(){
     if(this.style.color==="red"){
         this.style.color="white"
@@ -172,6 +169,8 @@ document.querySelectorAll('.song-hover').forEach(song => {
         // Update audio source
         audioPlayer.src = audioSrc;
         audioPlayer.play();
+        const playButton = document.getElementById("playButton");
+        playButton.setAttribute("src","images/pause-button.png");
 
         // Handle errors in case the audio file is missing
         audioPlayer.onerror = function () {
