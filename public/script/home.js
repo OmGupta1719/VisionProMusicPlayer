@@ -88,7 +88,7 @@ function toggleVolume() {
         this.classList.remove("fa-volume-xmark");
         this.classList.add("fa-volume-low")
     }
-    volumeDisplay.textContent = music.volume.toFixed(1);
+    // volumeDisplay.textContent = music.volume.toFixed(1);
 }
 
 
@@ -103,6 +103,7 @@ music.addEventListener("loadedmetadata", () => {
 
 // Update progress bar as song plays
 music.addEventListener("timeupdate", () => {
+    const progressFill = document.getElementById("progressFill")
     const progressPercentage = (music.currentTime / music.duration) * 100;
     progressFill.style.width = `${progressPercentage}%`;
     currentTimeDisplay.textContent = fTime(music.currentTime);
@@ -131,43 +132,43 @@ function fTime(time) {
 
 document.querySelectorAll('.song-hover').forEach(song => {
     song.addEventListener('click', function () {
-        const songName = this.querySelector('.song-hover-song-name').textContent.trim();
-        const artistName = this.querySelector('.song-hover-artist-name').textContent.trim();
+        const songName = this.querySelector('.song-hover-song-name').textContent;
+        const artistName = this.querySelector('.song-hover-artist-name').textContent;
         const songImage = this.querySelector('img').src;
+        
 
         // Get current now-playing elements
-        const nowPlayingImage = document.querySelector('.now-playing');
         const nowPlayingSong = document.querySelector('.current-song');
+        const nowPlayingImage = document.querySelector('.now-playing');  //bada vala image
         const nowPlayingArtist = document.querySelector('.current-artist');
-        const playBarImage = document.getElementById('play-bar-image');
+        const playBarImage = document.getElementById('play-bar-image'); //chota vala image
         const audioPlayer = document.getElementById('musicPlayer');
         
 
         // Store current playing song details before replacement
         const currentSongName = nowPlayingSong.textContent;
-        const currentArtistName = nowPlayingArtist.textContent;
         const currentSongImage = nowPlayingImage.src;
+        const currentArtistName = nowPlayingArtist.textContent;
 
         // Update now-playing section
         nowPlayingImage.src = songImage;
         nowPlayingSong.textContent = songName;
         nowPlayingArtist.textContent = artistName;
         playBarImage.src = songImage; // Update play-bar image
+        
 
-        // Format audio filename
-        let formattedSongName = songName.toLowerCase().replace(/ /g, '-');
-        let audioSrc = `audio/${formattedSongName}.mp3`;
 
         // Update audio source
-        audioPlayer.src = audioSrc;
-        audioPlayer.play();
+        const clickAudio = this.querySelector('.music'); 
+const tempSrc = audioPlayer.src; 
+
+audioPlayer.src = clickAudio.src; 
+audioPlayer.load(); 
+audioPlayer.play(); 
+
+clickAudio.src = tempSrc;
         const playButton = document.getElementById("playButton");
         playButton.setAttribute("src","images/pause-button.png");
-
-        // Handle errors in case the audio file is missing
-        audioPlayer.onerror = function () {
-            console.error('Audio file not found:', audioSrc);
-        };
 
 
         // Replace the selected song with the previously playing song
