@@ -26,22 +26,28 @@ app.set("audio", path.join(__dirname, "audio"));
 app.listen(port,()=>{
     console.log(`App running on port ${port}`);
 })
-app.get("/",(req,res)=>{
+app.get("/",async (req,res)=>{
     res.render("home.ejs");
+    var checkAPI = await fetch(`${NO_CODE_API_SPOTIFY}/search?q=${req.body.songname}&type=track`);
 })
+
 
 //Get searched name
 app.post("/submit",async (req,res)=>{
     console.log(req.body.songname);
     const result = await fetch(`${NO_CODE_API_SPOTIFY}/search?q=${req.body.songname}&type=track`);
     const songData = await result.json();
-    const one = songData.tracks.items[0];
-    const two = songData.tracks.items[1];
-    const three = songData.tracks.items[2];
-    const four = songData.tracks.items[3];
-    const five = songData.tracks.items[4];
-    const six = songData.tracks.items[5];
-    const seven = songData.tracks.items[6];
+
+    const validSongs = songData.tracks.items.filter(item => item.name && item.preview_url);
+    const [one, two, three, four, five, six, seven] = validSongs;
+
+    // const one = songData.tracks.items[0];
+    // const two = songData.tracks.items[1];
+    // const three = songData.tracks.items[2];
+    // const four = songData.tracks.items[3];
+    // const five = songData.tracks.items[4];
+    // const six = songData.tracks.items[5];
+    // const seven = songData.tracks.items[6];
     res.render("home.ejs",{
         songOne : one,
         songTwo : two,

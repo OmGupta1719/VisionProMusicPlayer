@@ -8,7 +8,6 @@
 body{
     height: 100vh;
     background: url("/images/background-try.jpg") no-repeat center center/cover ;
-    /* background-image: linear-gradient(135deg,rgb(89, 89, 89),black); */
 }
 .container{
     display: flex;
@@ -31,7 +30,6 @@ body{
 .float-button{
     line-height: 2.4em;
     text-align: center;
-    /* background-color: blue; */
     height: 100%;
     width: 100%;
     border-radius: 25px;
@@ -57,18 +55,13 @@ body{
 .music-box{
     padding-bottom: 20px;
     margin-top: 15px;
-    /* backdrop-filter: blur(10px);
-    background-color: rgb(225, 225, 225,0.2); */
     backdrop-filter: blur(20px);
     background-color: rgb(225, 225, 225,0.4);
-    /* background-color: yellow; */
     width: 60%;
-    /* border-radius: 50px; */
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
     display: flex;
     flex-direction: column;
-    /* padding-bottom: 204px; */
 }
 #music-box-search{
     background-color: white;
@@ -96,11 +89,9 @@ body{
         right: 68px;
         font-weight: 300;
 }
-
 .music-images{
     position: relative;
     right: 10%;
-    /* background-color: white; */
     width: 120%;
     margin-top: 20px;
     display: flex;
@@ -112,15 +103,12 @@ body{
     gap: 30px;
     transition: height 0.1s ease-in-out;
 }
-
 .now-playing{
     height: 220px !important;
 }
-/* TRY */
 .music-images img:hover{
     height: 140px;
 }
-
 .song-hover{
     height: 180px;
     align-content: end;
@@ -142,25 +130,17 @@ body{
   .song-hover-artist-name{
     font-weight: 100;
   }
-/* TRY */
 .start-image{
     mask-image: linear-gradient(to right, rgba(0,0,0,0) 20%,rgba(0,0,0,0.65) 100%);
 }
 .end-image{
     mask-image: linear-gradient(to left, rgba(0,0,0,0) 20%,rgba(0,0,0,0.65) 100%);
 }
-
-
 .music-functions{
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
-    
-    /* position: relative;
-    bottom: 300px;*/
     height: 9em;
     width: 60%;
-    /* backdrop-filter: blur(20px);
-    background-color: rgb(225, 225, 225,0.4); */
     backdrop-filter: blur(10px);
     background-color: rgb(225, 225, 225,0.2);
 }
@@ -188,7 +168,6 @@ body{
 .next-song{
     height: 70px;
 }
-/*  */
 .progress-container {
     width: 80%;
     height: 6px;
@@ -200,16 +179,12 @@ body{
     position: relative;
     bottom: 5px;
 }
-
-/* Progress Fill (Dynamically Expanding) */
 .progress-fill {
     width: 0%;
     height: 100%;
     background: #b9271d;
     transition: width 0.2s linear;
 }
-/*  */
-
 .next-song img{
     height: 60px;
     border-radius: 10px;
@@ -251,8 +226,6 @@ body{
     bottom: 12px;
     font-size: 20px;
 }
-
-
 .play-functions{
     backdrop-filter: blur(10px);
     background-color: rgb(225, 225, 225,0.2);
@@ -308,13 +281,11 @@ body{
 .current-song{
     font-size: 16px;
     color: white;
-    /* margin-bottom: 2px; */
 }
 .current-artist{
     width: 18em;
     color: rgba(46, 46, 46,0.8);
     font-size: 12px;
-    
 }
 .current-options{
     margin-left: 1em;
@@ -344,11 +315,7 @@ body{
 .volume{
     width: 25px;
 }
-/* #volumeSlider::-webkit-slider-runnable-track {
-    background: #535353; 
-    height: 6px;
-    border-radius: 5px;
-  } */
+
   #volumeSlider {
     -webkit-appearance: none;
     width: 80px;
@@ -361,14 +328,12 @@ body{
     right: 20px;
   }
 
-  /* Track */
   #volumeSlider::-webkit-slider-runnable-track {
     background: white;
     height: 6px;
     border-radius: 5px;
   }
 
-  /* Thumb (draggable part) */
   #volumeSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 14px;
@@ -379,4 +344,3 @@ body{
     margin-top: -4px; /* Align properly */
     transition: transform 0.2s, background 0.3s;
   }
-
